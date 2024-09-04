@@ -1,69 +1,52 @@
 ﻿@model AppFluxoDeCaixa.Models.Clientes
 
 @{
-    ViewData["Title"] = "Delete Cliente";
+    ViewData["Title"] = "Deletar Cliente";
 }
 
-<h1 class="text-center text-light display-5">Deletar Cadastro de Cliente</h1>
+<h1 class="display-5 text-ligth text-center">Deletar Cadastro de Cliente</h1>
 
-<h3 class="mt-3 mb-3">Deseja excluir esse cadastro?</h3>
+<h3 class="mt-3 mb-3">Deseja exluir esse cadastro?</h3>
 <div>
-    <h4>Clientes</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+        <dt class="col-3">
             @Html.DisplayNameFor(model => model.ClientesNome)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-9">
             @Html.DisplayFor(model => model.ClientesNome)
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Telefone)
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Telefone)
+        <dd class="col-9">
+            @Model.Email
         </dd>
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Celular)
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.Celular)
         </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Celular)
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.Celular)
         </dd>
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.TipoPessoa)
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.CpfCnpj)
         </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.TipoPessoa)
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.CpfCnpj)
         </dd>
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.CpfCnpj)
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.DataNascFundacao)
         </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CpfCnpj)
-        </dd>
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-        <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.DataNascFundacao)
-        </dt>
-        <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.DataNascFundacao)
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.DataNascFundacao)
         </dd>
 
     </dl>
 
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="ClientesId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <a class="btn btn-outline-secondary" asp-action="Index">Cancelar</a>
     </form>
 </div>
